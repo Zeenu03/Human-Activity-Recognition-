@@ -40,7 +40,7 @@ The model is build upon the following key aspects and observation in the dataset
 
 3. Train Decision Tree with varrying depths (2-8) using trainset and report accuracy and confusion matrix using Test set. Does the accuracy changes when the depth is increased? Plot the accuracies and reason why such a result has been obtained. 
 <div align="center">
-<img src="Plots/Accuracy Vs Depth Plot.png" width=800px>
+<img src="Plots/Accuracy Vs Depth Plot.png" width=600px>
 </div>
 <div align="center">
 <img src="Plots/Confusion_matrix subplot at different depth.png" width=1200px>
@@ -58,8 +58,8 @@ The model is build upon the following key aspects and observation in the dataset
 ## Use PCA to compress the acceleration timeseries
 We use PCA [(Principal Component Analysis)](https://en.wikipedia.org/wiki/Principal_component_analysis) on Total Acceleration $(acc_x^2+acc_y^2+acc_z^2)$ and a flattened dataset into two features. We can visualize different class of activities using below scatter plot.
  <div style="display: flex; justify-content: space-evenly;">
- <img src="Plots/PCA scatter_total_acc.png" style="margin-right: 10px; width: 600px;" >
- <img src="Plots/PCA scatter_flat_dataset.png" style="margin-right: 10px; width: 600px;">
+ <img src="Plots/PCA scatter_total_acc.png" style="margin-right: 10px; width: 500px;" >
+ <img src="Plots/PCA scatter_flat_dataset.png" style="margin-right: 10px; width: 500px;">
  </div>
  <br>
 
@@ -86,10 +86,11 @@ We use [TSFEL](https://tsfel.readthedocs.io/en/latest/) ([a featurizer library](
 - 1500-Feature Matrix: Relying on raw acceleration values at specific timestamps can lead to incorrect decisions, as similar acceleration values can appear in different activities momentarily. The featurized approach, which considers overall statistical properties like mean and variance over time, provides a more reliable basis for classification.
 
 ## Model trained on TSFEL features Vs trained on Raw flatened dataset.
- <div style="display: flex; justify-content: space-evenly;">
- <img src="Plots/Accuracy Vs Depth of tsfel and raw date.png" style="margin-right: 10px; width: 600px;" >
- <img src="Plots/confusion subplot tsfel Vs raw data.png" style="margin-right: 10px; width: 600px;">
- </div>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="Plots/Accuracy Vs Depth of tsfel and raw date.png" style="margin-bottom: 10px; width: 600px;">
+    <img src="Plots/confusion subplot tsfel Vs raw data.png" style="width: 600px;">
+</div>
+
 <br>
 
 - Featurized data works better than raw flatened data, as confirmed by the line plot comparing test accuracies of models trained on both datasets.
